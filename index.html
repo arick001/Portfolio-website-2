@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>not_Arick Thumbnail Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --orange: #ff7a00;
+      --orange-dark: #ff4500;
+      --bg: #1a1a1a;
+      --card: #242424;
+    }
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: var(--bg);
+      color: #fff;
+    }
+
+    /* HEADER */
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+      position: relative;
+      overflow: hidden;
+    }
+    header img {
+      width: 180px;
+      border-radius: 50%;
+      animation: float 4s ease-in-out infinite, glow 2s infinite alternate;
+      box-shadow: 0 0 20px rgba(255, 122, 0, 0.8);
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+    @keyframes glow {
+      from { box-shadow: 0 0 15px rgba(255,122,0,0.6); }
+      to { box-shadow: 0 0 35px rgba(255,122,0,1); }
+    }
+    header h1 {
+      margin-top: 20px;
+      font-size: 2.8rem;
+      font-weight: 800;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    /* PORTFOLIO */
+    .portfolio {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .portfolio h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.4rem;
+      color: var(--orange);
+      font-weight: 700;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+    .grid-item {
+      background: var(--card);
+      border-radius: 14px;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+    }
+    .grid-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .grid-item:hover img {
+      transform: scale(1.08);
+    }
+    .grid-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 20px rgba(255, 122, 0, 0.7);
+    }
+    .grid-item p {
+      padding: 15px;
+      font-size: 1.1rem;
+      color: #ddd;
+      background: rgba(255,255,255,0.05);
+    }
+
+    /* CONTACT */
+    .contact {
+      background: linear-gradient(135deg, rgba(255, 122, 0, 0.15), rgba(255, 69, 0, 0.15));
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .contact h2 {
+      color: var(--orange);
+      margin-bottom: 25px;
+      font-size: 2rem;
+    }
+    .contact form {
+      max-width: 500px;
+      margin: auto;
+      background: rgba(255,255,255,0.05);
+      padding: 25px;
+      border-radius: 14px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 15px rgba(255,122,0,0.3);
+    }
+    .contact input, .contact textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+    }
+    .contact button {
+      background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+      color: #fff;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: transform 0.2s ease;
+    }
+    .contact button:hover {
+      transform: scale(1.05);
+    }
+    #response {
+      margin-top: 15px;
+      font-size: 0.9rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <img src="images/logo.png" alt="Logo">
+    <h1>Not Arick Thumbnails</h1>
+    <p>Creative, Eye-Catching Thumbnails for YouTube & More</p>
+  </header>
+
+  <!-- PORTFOLIO -->
+  <section class="portfolio">
+    <h2>My Work</h2>
+    <div class="grid">
+      <div class="grid-item">
+        <img src="images/thumbnail1.jpg" alt="Gaming Thumbnail">
+        <p>Gaming Thumbnails</p>
+      </div>
+      <div class="grid-item">
+        <img src="images/thumbnail2.jpg" alt="Reaction Thumbnail">
+        <p>Reaction Thumbnails</p>
+      </div>
+      <div class="grid-item">
+        <img src="images/thumbnail3.jpg" alt="Tech Thumbnail">
+        <p>Tech Review Thumbnails</p>
+      </div>
+      <div class="grid-item">
+        <img src="images/thumbnail4.jpg" alt="Promo Thumbnail">
+        <p>Promotional Thumbnails</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" rows="5" placeholder="Your Message"></textarea>
+      <button type="submit">Send Request</button>
+      <p id="response"></p>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 not_Arick. All rights reserved.
+  </footer>
+
+  <!-- DISCORD WEBHOOK SCRIPT -->
+  <script>
+    const form = document.getElementById('contactForm');
+    const responseEl = document.getElementById('response');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      // 🔗 Replace with your Discord webhook URL
+      const webhookURL = "YOUR_DISCORD_WEBHOOK_URL";
+
+      const payload = {
+        content: `📩 **New Contact Request**\n👤 Name: ${name}\n📧 Email: ${email}\n💬 Message: ${message}`
+      };
+
+      try {
+        const res = await fetch(webhookURL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        if (res.ok) {
+          responseEl.textContent = "✅ Message sent successfully!";
+          responseEl.style.color = "lightgreen";
+          form.reset();
+        } else {
+          responseEl.textContent = "❌ Failed to send message.";
+          responseEl.style.color = "red";
+        }
+      } catch (err) {
+        responseEl.textContent = "⚠️ Error sending message.";
+        responseEl.style.color = "red";
+      }
+    });
+  </script>
+</body>
+</html>
